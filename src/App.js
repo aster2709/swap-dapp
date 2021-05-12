@@ -1,7 +1,7 @@
 import React from "react";
 import Web3 from "web3";
-import IERC20 from "./ethereum/contracts/IERC20.json";
-import Swap from "./ethereum/contracts/Swap.json";
+import IERC20 from "./ethereum/artifacts/IERC20.json";
+import Swap from "./ethereum/artifacts/Swap.json";
 import { Form, Button, Card } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 
@@ -11,7 +11,7 @@ class App extends React.Component {
   state = {
     tokenAddress: "",
     amount: "",
-    contractAddress: "0x5C426F637157a7054A8aD11c18eeFaC0fe7284E4",
+    contractAddress: "0xd3CfFe1d111Cdc6a20Fd401C6Ede79fb2d3b528A",
     errorMessage: "",
     loading: false,
     balance: "",
@@ -95,7 +95,7 @@ class App extends React.Component {
             </div>
             <div style={{ marginBottom: "10px" }}>
               <Form.Input
-                label="Amount"
+                label="Amount inlcuding all required zeros"
                 type="text"
                 value={this.state.amount}
                 onChange={(e) => this.setState({ amount: e.target.value })}
